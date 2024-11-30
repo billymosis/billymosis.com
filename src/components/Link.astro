@@ -10,7 +10,6 @@ const { href, class: className, ...props } = Astro.props;
   class:list={['flex gap-2 items-center', className]}
   href={href}
   target="_blank"
-  onclick="event.stopPropagation()"
   {...props}
   ><slot />
   <svg

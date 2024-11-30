@@ -60,31 +60,17 @@ const skills = [
         <header>
           <nav class="text-primary">
             <div class="grid gap-4 nav-links">
-              <a
-                onclick="event.stopPropagation()"
-                class="text-secondary"
-                href="#about">About</a
-              >
-              <a
-                onclick="event.stopPropagation()"
-                class="text-secondary"
-                href="#experiences">Experiences</a
-              >
-              <a
-                onclick="event.stopPropagation()"
-                class="text-secondary"
-                href="#education">Education & Achievement</a
+              <a class="text-secondary" href="#about">About</a>
+              <a class="text-secondary" href="#experiences">Experiences</a>
+              <a class="text-secondary" href="#education"
+                >Education & Achievement</a
               >
               <a class="text-secondary" href="#projects">Projects</a>
             </div>
           </nav>
         </header>
         <div class="flex gap-4">
-          <a
-            onclick="event.stopPropagation()"
-            href="https://github.com/billymosis"
-            target="_blank"
-          >
+          <a href="https://github.com/billymosis" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -97,11 +83,7 @@ const skills = [
               ></path></svg
             >
           </a>
-          <a
-            onclick="event.stopPropagation()"
-            href="mailto:edo.billy@gmail.com"
-            target="_blank"
-          >
+          <a href="mailto:edo.billy@gmail.com" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -116,11 +98,7 @@ const skills = [
               ></path></svg
             >
           </a>
-          <a
-            onclick="event.stopPropagation()"
-            href="https://linkedin.com/in/billymosis"
-            target="_blank"
-          >
+          <a href="https://linkedin.com/in/billymosis" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -133,11 +111,7 @@ const skills = [
               ></path></svg
             >
           </a>
-          <a
-            onclick="event.stopPropagation()"
-            href="https://youtube.com/@billymosis"
-            target="_blank"
-          >
+          <a href="https://youtube.com/@billymosis" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -150,11 +124,7 @@ const skills = [
               ></path></svg
             >
           </a>
-          <a
-            onclick="event.stopPropagation()"
-            href="https://twitter.com/billymosis"
-            target="_blank"
-          >
+          <a href="https://twitter.com/billymosis" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -259,4 +229,11 @@ const skills = [
   if (footer) {
     footer.textContent += ` ©${new Date().getFullYear()}`;
   }
+  const allAnchors = document.querySelectorAll('a');
+
+  allAnchors.forEach((anchor) => {
+    anchor.onclick = (event) => {
+      event.stopPropagation();
+    };
+  });
 </script>
