@@ -1,0 +1,43 @@
+---
+import type { ImageMetadata } from 'astro';
+import Link from './Link.astro';
+
+type Props = {
+  title: string;
+  webLink: string;
+  skills: Array<string>;
+  image?: ImageMetadata;
+};
+
+const { title, webLink, skills, image } = Astro.props;
+---
+
+<div
+  class="card card-compact bg-primary text-primary-content w-full opacity-80 hover:opacity-100 flex shadow-xl"
+>
+  <figure class="not-prose">
+    <img
+      class="slide-animation"
+      src={image?.src}
+      alt="kevoucher.com screenshot"
+    />
+  </figure>
+  <div class="card-body gap-4">
+    <div class="grid gap-4">
+      <div class="flex gap-2 items-center">
+        <h2 class="card-title font-bold m-0">{title}</h2>
+        <Link href={webLink} />
+      </div>
+      <slot />
+      <div class="flex flex-wrap gap-2">
+        {
+          skills.map((skill) => {
+            return (
+              <span class="badge badge-neutral font-semibold">{skill}</span>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</div>

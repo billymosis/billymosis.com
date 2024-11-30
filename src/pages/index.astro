@@ -1,50 +1,262 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Experiences from '../components/Experiences.astro';
+import Education from '../components/Education.astro';
+import Projects from '../components/Projects.astro';
+import Link from '../components/Link.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const skills = [
+  'Three.js',
+  'React',
+  'Docker',
+  'Linux',
+  'Neovim',
+  'TypeScript',
+  'Python',
+  'AutoCAD',
+  'QGIS',
+];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="relative">
+    <div class="fixed w-full h-full top-0" id="pixi-container"></div>
+    <div
+      id="content"
+      class="flex gap-12 prose max-w-7xl m-auto min-h-screen relative mt-12 p-6 flex-col md:flex-row"
+    >
+      <div
+        class="md:sticky top-0 h-screen w-full flex-1 pt-24 flex flex-col gap-12"
+      >
+        <div class="grid gap-4">
+          <h1 class="font-medium m-0">Billy Priambodo</h1>
+          <div class="grid gap-2">
+            <h2 class="font-medium m-0">Full-Stack Engineer</h2>
+            <div class="flex gap-2 flex-wrap">
+              {
+                skills.map((skill) => (
+                  <span class="badge badge-accent font-semibold">{skill}</span>
+                ))
+              }
+            </div>
+          </div>
+          <div>
+            <p>
+              Specializing in React, Three.js, and interactive solutions for 3D
+              mapping, CAD, GIS, and robotics.
+            </p>
+            <p>Currently preparing for JLPT N4, July 2025.</p>
+            <p>頑張ります！！ (Ganbarimasu!)</p>
+            <button id="debug" class="btn btn-xs btn-accent"
+              >Marching Square!</button
+            >
+          </div>
+        </div>
+        <header>
+          <nav class="text-primary">
+            <div class="grid gap-4 nav-links">
+              <a
+                onclick="event.stopPropagation()"
+                class="text-secondary"
+                href="#about">About</a
+              >
+              <a
+                onclick="event.stopPropagation()"
+                class="text-secondary"
+                href="#experiences">Experiences</a
+              >
+              <a
+                onclick="event.stopPropagation()"
+                class="text-secondary"
+                href="#education">Education & Achievement</a
+              >
+              <a class="text-secondary" href="#projects">Projects</a>
+            </div>
+          </nav>
+        </header>
+        <div class="flex gap-4">
+          <a
+            onclick="event.stopPropagation()"
+            href="https://github.com/billymosis"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-brand-github"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z"
+              ></path></svg
+            >
+          </a>
+          <a
+            onclick="event.stopPropagation()"
+            href="mailto:edo.billy@gmail.com"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-mail"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z"
+              ></path><path
+                d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z"
+              ></path></svg
+            >
+          </a>
+          <a
+            onclick="event.stopPropagation()"
+            href="https://linkedin.com/in/billymosis"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-brand-linkedin"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1 -5 5h-10a5 5 0 0 1 -5 -5v-10a5 5 0 0 1 5 -5zm-9 8a1 1 0 0 0 -1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0 -1 -1m6 0a3 3 0 0 0 -1.168 .236l-.125 .057a1 1 0 0 0 -1.707 .707v5a1 1 0 0 0 2 0v-3a1 1 0 0 1 2 0v3a1 1 0 0 0 2 0v-3a3 3 0 0 0 -3 -3m-6 -3a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1"
+              ></path></svg
+            >
+          </a>
+          <a
+            onclick="event.stopPropagation()"
+            href="https://youtube.com/@billymosis"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-brand-youtube"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M18 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-12a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-9 6v6a1 1 0 0 0 1.514 .857l5 -3a1 1 0 0 0 0 -1.714l-5 -3a1 1 0 0 0 -1.514 .857z"
+              ></path></svg
+            >
+          </a>
+          <a
+            onclick="event.stopPropagation()"
+            href="https://twitter.com/billymosis"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon icon-tabler icons-tabler-filled icon-tabler-brand-twitter"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M14.058 3.41c-1.807 .767 -2.995 2.453 -3.056 4.38l-.002 .182l-.243 -.023c-2.392 -.269 -4.498 -1.512 -5.944 -3.531a1 1 0 0 0 -1.685 .092l-.097 .186l-.049 .099c-.719 1.485 -1.19 3.29 -1.017 5.203l.03 .273c.283 2.263 1.5 4.215 3.779 5.679l.173 .107l-.081 .043c-1.315 .663 -2.518 .952 -3.827 .9c-1.056 -.04 -1.446 1.372 -.518 1.878c3.598 1.961 7.461 2.566 10.792 1.6c4.06 -1.18 7.152 -4.223 8.335 -8.433l.127 -.495c.238 -.993 .372 -2.006 .401 -3.024l.003 -.332l.393 -.779l.44 -.862l.214 -.434l.118 -.247c.265 -.565 .456 -1.033 .574 -1.43l.014 -.056l.008 -.018c.22 -.593 -.166 -1.358 -.941 -1.358l-.122 .007a.997 .997 0 0 0 -.231 .057l-.086 .038a7.46 7.46 0 0 1 -.88 .36l-.356 .115l-.271 .08l-.772 .214c-1.336 -1.118 -3.144 -1.254 -5.012 -.554l-.211 .084z"
+              ></path></svg
+            >
+          </a>
+        </div>
+      </div>
+      <main class="flex-1 grid gap-32 overflow-y-auto">
+        <div id="about" class="mt-24 scroll-mt-24 mb-64">
+          <p class="m-0 text-justify">
+            With a passion for problem-solving and innovation, I specialize in
+            creating intuitive interfaces and scalable systems, blending over
+            <strong> 6 years </strong>of experience in
+            <strong> engineering, spatial analytics, and 3D graphics </strong>
+            to deliver cutting-edge solutions. At <strong> Movel AI, </strong> I
+            tackle challenges at the intersection of robotics and GIS, crafting innovative
+            tools for mapping and navigation. My past work spans optimizing CAD/GIS
+            workflows, analyzing complex spatial data, and engineering solutions
+            for large-scale infrastructure projects. In my free time, I explore emerging
+            technologies and contribute to personal projects that merge creativity
+            with innovation.
+          </p>
+        </div>
+        <div id="experiences">
+          <h1 class="font-bold sr-only">Experiences</h1>
+          <Experiences />
+          <Link href="google.com"> View Full Resume </Link>
+        </div>
+        <div id="education">
+          <h1 class="font-bold sr-only">Education</h1>
+          <Education />
+          <Link href="google.com">
+            View Full Education, Certificates & Achievement
+          </Link>
+        </div>
+        <div id="projects">
+          <h1 class="font-bold sr-only">Projects</h1>
+          <Projects />
+          <Link href="google.com"> View Full Projects Archive </Link>
+        </div>
+        <footer>
+          <p class="text-center" id="footer-paragraph">
+            Built with Astro.js, PIXI.js and Tailwind CSS, and proudly deployed
+            on my self-hosted VPS.
+          </p>
+        </footer>
+      </main>
+    </div>
+    <div class="fixed top-0 right-0 p-4 hidden" id="tweak-pane"></div>
+    <div class="fixed top-0 right-0 p-4 hidden" id="tweak-pane"></div>
+  </body>
 </html>
+<script src="../components/MarchingSquare/index.ts"></script>
+<script>
+  const targets = document.querySelectorAll(
+    '#about, #experiences, #education, #projects',
+  );
+  const anchors = document.querySelectorAll('nav>div.grid a');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const entryId = entry.target.id;
+          for (const anchor of anchors) {
+            const att = anchor.getAttribute('href');
+            if (att && att.replace('#', '') === entryId) {
+              anchor.classList.add('active');
+            } else {
+              anchor.classList.remove('active');
+            }
+          }
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0.5,
+    },
+  );
+  for (const a of targets) {
+    observer.observe(a);
+  }
+
+  const debug = document.getElementById('debug');
+  const tweakPane = document.getElementById('tweak-pane');
+  if (debug) {
+    debug.addEventListener('click', (e) => {
+      e.stopPropagation();
+      tweakPane?.classList.toggle('hidden');
+      const stats = document.getElementById('stats');
+      stats?.classList.toggle('hidden');
+    });
+  }
+  const footer = document.getElementById('footer-paragraph');
+  if (footer) {
+    footer.textContent += ` ©${new Date().getFullYear()}`;
+  }
+</script>

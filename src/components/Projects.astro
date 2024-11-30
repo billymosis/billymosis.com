@@ -1,0 +1,58 @@
+---
+import ProjectsCard from './ProjectsCard.astro';
+import kevoucherImg from '../assets/kevoucher.com.png';
+import plan3dImg from '../assets/plan3d.png';
+---
+
+<ul class="list-none p-0 grid gap-4">
+  <li class="p-0">
+    <ProjectsCard
+      title="Rust Full-Stack"
+      webLink="https://kevoucher.com"
+      skills={[
+        'Javascript',
+        'HTMX',
+        'Tailwind CSS',
+        'Rust',
+        'Axum',
+        'Sqlite',
+        'Docker',
+      ]}
+      image={kevoucherImg}
+    >
+      <p class="m-0">
+        A modern voucher management platform built with <strong
+          >JavaScript</strong
+        >, <strong>HTMX</strong>, and a robust backend powered by <strong
+          >Rust</strong
+        > and <strong>Axum</strong>. Running efficiently on a <strong
+          >1 GB RAM, 1 CPU VPS</strong
+        >, the system leverages <strong>SQLite</strong> for lightweight yet reliable
+        data storage and is containerized with <strong>Docker</strong> for seamless
+        deployment. Despite its minimal resource requirements, Kevoucher.com delivers
+        a fast, intuitive user experience with a memory footprint of under <strong
+          >10 MB RAM</strong
+        >.
+      </p>
+    </ProjectsCard>
+  </li>
+  <li class="p-0">
+    <ProjectsCard
+      title="Plan Long Cross"
+      webLink="https://github.com/billymosis/Long-Cross"
+      skills={['Autocad SDK', 'C# .NET Framework', 'Autolisp']}
+      image={plan3dImg}
+    >
+      <p class="m-0">
+        A specialized program designed to enhance the efficiency of irrigation
+        engineers and drafters by automating survey data processing and
+        visualization. Built with <strong>
+          AutoCAD SDK, C# .NET Framework, and Autolisp,
+        </strong> it simplifies the creation of long, cross, and plan profiles for
+        irrigation projects. Features include data input from CSV/TXT formats, 3D
+        plan visualization, and HEC-RAS GEO file export, all tailored for modern
+        irrigation rehabilitation workflows.
+      </p>
+    </ProjectsCard>
+  </li>
+</ul>
