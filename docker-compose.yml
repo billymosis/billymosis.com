@@ -1,0 +1,13 @@
+services:
+  os:
+    image: alpine:3.20.3
+    command: tail -f /dev/null
+    volumes:
+      - billymosis.com:/billymosis.com
+  data:
+    image: billymosis/billymosis.com:latest
+    volumes:
+      - billymosis.com:/dist
+
+volumes:
+  billymosis.com:
