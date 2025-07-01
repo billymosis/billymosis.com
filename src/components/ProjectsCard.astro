@@ -13,33 +13,66 @@ const { title, webLinks, skills, image } = Astro.props;
 ---
 
 <div
-  class="card card-compact bg-primary text-primary-content w-full opacity-80 hover:opacity-100 flex shadow-xl"
+  class="card w-full transition-all duration-300 ease-in-out bg-white/90 dark:bg-gray-800/90 shadow-lg rounded-lg overflow-hidden hover:shadow-xl border border-gray-200 dark:border-gray-700"
 >
-  <figure class="not-prose">
-    <img
-      class="slide-animation"
-      src={image?.src}
-      alt={title}
-    />
+  <figure class="m-0 overflow-hidden">
+    {image && (
+      <img
+        class="slide-animation w-full"
+        src={image.src}
+        alt={title}
+        loading="lazy"
+      />
+    )}
   </figure>
-  <div class="card-body gap-4">
+  <div class="card-body p-6 gap-4">
     <div class="grid gap-4">
-      <div class="flex gap-2 items-center">
-        <h2 class="card-title font-bold m-0">{title}</h2>
-        {webLinks.map(f => (
-        <Link title={f} href={f} />
-        ))}
+      <div class="flex gap-3 items-center flex-wrap">
+        <h2 class="card-title text-xl font-bold m-0 text-gray-900 dark:text-white">
+          {title}
+        </h2>
+        <div class="flex gap-2">
+          {webLinks.map((f) => (
+            <Link 
+              href={f} 
+              class="text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 transition-colors" 
+            />
+          ))}
+        </div>
       </div>
-      <slot />
+      
+      <div class="max-w-none text-gray-700 dark:text-gray-300">
+        <slot />
+      </div>
+      
       <div class="flex flex-wrap gap-2">
-        {
-          skills.map((skill) => {
-            return (
-              <span class="badge badge-neutral font-semibold">{skill}</span>
-            );
-          })
-        }
+        {skills.map((skill) => (
+          <span class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+            {skill}
+          </span>
+        ))}
       </div>
     </div>
   </div>
 </div>
+
+<style is:global>
+  img.slide-animation {
+    transition: all 0.25s ease-out;
+    max-height: 256px;
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+  }
+
+  img.slide-animation:hover {
+    max-height: 1000px;
+    transition: all 0.25s ease-in;
+  }
+
+  /* Smooth transitions for dark mode */
+  .card, .card-body, figure, h2, span {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+</style>

@@ -4,20 +4,38 @@ import Link from './Link.astro';
 
 <ul class="list-none p-0 grid gap-4">
   <li class="p-0">
-    <div
-      class="card card-compact bg-primary text-primary-content w-full opacity-80 hover:opacity-100"
-    >
-      <div class="card-body">
-        <div class="flex gap-2 items-center">
-          <h2 class="card-title font-bold m-0">Brawijaya University</h2>
-          <Link href="https://ub.ac.id" />
+    <div class="card w-full transition-all duration-300 bg-white/90 dark:bg-gray-800/90 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 p-6 hover:border-amber-400/30 dark:hover:border-amber-600/30">
+      <div class="card-body p-0">
+        <div class="flex gap-3 items-start">
+          <div class="grid gap-1 flex-1">
+            <div class="flex gap-2 items-center">
+              <h2 class="card-title text-xl font-bold m-0 text-gray-900 dark:text-white">
+                Brawijaya University
+              </h2>
+              <Link 
+                href="https://ub.ac.id" 
+                class="text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+              />
+            </div>
+            <p class="text-gray-700 dark:text-gray-300 m-0 leading-relaxed">
+              <span class="block">Malang, Indonesia - Engineering</span>
+              <span class="block">Degree in Water Resources (2018)</span>
+            </p>
+          </div>
+          <div class="bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">
+            2018
+          </div>
         </div>
-        <p>
-          Brawijaya University, Malang, Indonesia - Engineering
-          <br />
-          Degree in Water Resources (2018)
-        </p>
       </div>
     </div>
   </li>
 </ul>
+
+<style>
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+  }
+</style>
