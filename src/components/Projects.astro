@@ -2,13 +2,77 @@
 import ProjectsCard from './ProjectsCard.astro';
 import kevoucherImg from '../assets/kevoucher.com.png';
 import plan3dImg from '../assets/plan3d.png';
+import miniJiraImg from '../assets/mini-jira.png';
+import ragImg from '../assets/rag-pdf-mcq-quiz.png';
+import whatsappImg from '../assets/whatsapp-bot.jpeg'
 ---
 
 <ul class="list-none p-0 grid gap-4">
   <li class="p-0">
     <ProjectsCard
+      title="RAG PDF MCQ System"
+      webLinks={["https://github.com/billymosis/rag-pdf-mcq-quiz"]}
+      skills={[
+        'ChromaDB',
+        'LangChain',
+        'Google Gemini',
+        'Python',
+        'FastAPI',
+        'llama-parser',
+      ]}
+      image={ragImg}
+    >
+      <p class="m-0">
+        A <strong>FastAPI</strong> backend system for answering multiple-choice questions using <strong>Retrieval-Augmented Generation (RAG)</strong>. The solution achieved <strong>81.25% accuracy</strong> on 80 questions from financial course PDFs using <strong>ChromaDB</strong> for vector storage, <strong>LangChain</strong> for orchestration, and <strong>Google Gemini</strong> as the LLM. The system processes documents with Meta's <strong>llama-parser</strong> for PDF chunking, then embeds and queries text chunks through the vector store to retrieve relevant context for answer prediction. Includes evaluation scripts and REST API endpoints for batch prediction with <strong>JSON-based automated scoring</strong>.
+      </p>
+    </ProjectsCard>
+  </li>
+  <li class="p-0">
+    <ProjectsCard
+      title="Mini Jira (Fullstack)"
+      webLinks={["https://jira.billymosis.com", "https://github.com/billymosis/mini-jira-fe", "https://github.com/billymosis/mini-jira-be"]}
+      skills={[
+        'Django REST Framework',
+        'React',
+        'AWS (EC2/S3/CloudFront)',
+        'Docker',
+        'Tailwind CSS',
+        'Zustand',
+        'ShadCN',
+      ]}
+      image={miniJiraImg}
+    >
+      <p class="m-0">
+        A <strong>full-featured Jira clone</strong> with task/project management, built with <strong>Django REST Framework</strong> (backend) and <strong>React</strong> (frontend). Features <strong>JWT authentication</strong>, role-based permissions, and analytics APIs, deployed on <strong>AWS EC2 (t2.micro)</strong> with <strong>S3</strong> storage and <strong>CloudFront</strong> CDN. The frontend includes <strong>drag-and-drop tasks</strong> (built with React, Tailwind, and Zustand) and real-time pagination. Includes <strong>OpenAPI docs</strong> (drf-spectacular) and full <strong>Docker</strong> containerization for scalable deployment.
+      </p>
+    </ProjectsCard>
+  </li>
+  <li class="p-0">
+    <ProjectsCard
+      title="WhatsApp Graphflow Chatbot (Gemini)"
+      webLinks={["https://github.com/billymosis/graphflow-whatsapp-engine-bot-gemini"]}
+      skills={[
+        'Go (Golang)',
+        'WhatsApp Cloud API',
+        'Google Gemini',
+        'Chi Router',
+        'SQL/sqlc',
+        'JWT Auth',
+        'Gorilla Sessions',
+        'OAuth (Goth)',
+        'Swagger UI',
+      ]}
+      image={whatsappImg}
+    >
+      <p class="m-0">
+        A <strong>flow-based conversation automation</strong> system for WhatsApp built with <strong>Go</strong> (Chi router, Gorilla sessions). Integrates <strong>Google Gemini</strong> for AI responses and supports <strong>graph-defined JSON structures</strong> with nodes/edges for conditional logic routing. Features <strong>JWT authentication</strong>, SQL persistence (via <strong>sqlc</strong>), and <strong>Swagger UI</strong> documentation. Includes <strong>OAuth login</strong> (Goth) and full compatibility with personal <strong>WhatsApp Cloud API</strong> credentials for local development. The engine handles message logging, variable resolution, and interactive buttons within chat flows.
+      </p>
+    </ProjectsCard>
+  </li>
+  <li class="p-0">
+    <ProjectsCard
       title="Rust Full-Stack"
-      webLink="https://kevoucher.com"
+      webLinks={["https://github.com/billymosis/axum-saas-template"]}
       skills={[
         'Javascript',
         'HTMX',
@@ -22,16 +86,16 @@ import plan3dImg from '../assets/plan3d.png';
     >
       <p class="m-0">
         A modern voucher management platform built with <strong
-          >JavaScript</strong
+        >JavaScript</strong
         >, <strong>HTMX</strong>, and a robust backend powered by <strong
-          >Rust</strong
+        >Rust</strong
         > and <strong>Axum</strong>. Running efficiently on a <strong
-          >1 GB RAM, 1 CPU VPS</strong
+        >1 GB RAM, 1 CPU VPS</strong
         >, the system leverages <strong>SQLite</strong> for lightweight yet reliable
         data storage and is containerized with <strong>Docker</strong> for seamless
         deployment. Despite its minimal resource requirements, Kevoucher.com delivers
         a fast, intuitive user experience with a memory footprint of under <strong
-          >10 MB RAM</strong
+        >10 MB RAM</strong
         >.
       </p>
     </ProjectsCard>
@@ -39,7 +103,7 @@ import plan3dImg from '../assets/plan3d.png';
   <li class="p-0">
     <ProjectsCard
       title="Plan Long Cross"
-      webLink="https://github.com/billymosis/Long-Cross"
+      webLinks={["https://github.com/billymosis/Long-Cross"]}
       skills={['Autocad SDK', 'C# .NET Framework', 'Autolisp']}
       image={plan3dImg}
     >

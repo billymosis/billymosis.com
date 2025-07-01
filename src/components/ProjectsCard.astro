@@ -4,12 +4,12 @@ import Link from './Link.astro';
 
 type Props = {
   title: string;
-  webLink: string;
+  webLinks: Array<string>;
   skills: Array<string>;
   image?: ImageMetadata;
 };
 
-const { title, webLink, skills, image } = Astro.props;
+const { title, webLinks, skills, image } = Astro.props;
 ---
 
 <div
@@ -19,14 +19,16 @@ const { title, webLink, skills, image } = Astro.props;
     <img
       class="slide-animation"
       src={image?.src}
-      alt="kevoucher.com screenshot"
+      alt={title}
     />
   </figure>
   <div class="card-body gap-4">
     <div class="grid gap-4">
       <div class="flex gap-2 items-center">
         <h2 class="card-title font-bold m-0">{title}</h2>
-        <Link href={webLink} />
+        {webLinks.map(f => (
+        <Link title={f} href={f} />
+        ))}
       </div>
       <slot />
       <div class="flex flex-wrap gap-2">
