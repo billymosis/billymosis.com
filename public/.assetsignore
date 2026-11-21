@@ -1,0 +1,2 @@
+# Keep Windows download metadata (e.g. "favicon.ico:Zone.Identifier") out of the Cloudflare asset upload.
+*:Zone.Identifier

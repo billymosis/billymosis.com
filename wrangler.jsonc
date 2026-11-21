@@ -1,0 +1,18 @@
+// Cloudflare Workers static-assets deployment for the Astro site.
+// See docs/deploy-cloudflare.md for how deploys, secrets, the custom hostname and rollback work.
+{
+  "$schema": "https://unpkg.com/wrangler@4.166.0/config-schema.json",
+  "name": "billymosis-com",
+  "compatibility_date": "2026-11-01",
+  // Static-only Worker: no script, Cloudflare serves the Astro build output directly.
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // Keep the free <name>.<account-subdomain>.workers.dev address enabled.
+  "workers_dev": true,
+  // Custom hostname (Workers Custom Domain): `wrangler deploy` creates its proxied DNS record and
+  // certificate in the gatsu.org zone. Keep in sync with `site` in astro.config.mjs.
+  "routes": [{ "pattern": "billy.gatsu.org", "custom_domain": true }]
+}
