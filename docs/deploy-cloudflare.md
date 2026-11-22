@@ -15,7 +15,6 @@ The site is a static Astro build served by a Cloudflare Worker with
   - **Pull requests**: `pnpm build` (runs `astro check` + `astro build`) and
     `wrangler deploy --dry-run`. No secrets are used and nothing is deployed.
   - **Push to `main`** (or a manual run on `main`): build, then `wrangler deploy`.
-- The older GitHub Pages workflow (`.github/workflows/deploy.yml`) is left as it was.
 
 Manual deploy from a checkout (needs `wrangler login` or the two env vars below):
 
