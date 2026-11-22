@@ -2,6 +2,6 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE =
-  'Billy Priambodo | Full-Stack Engineer Specializing in 3D Mapping & Robotics';
+  'Billy Priambodo | Tech Lead – Trading Systems & Tokenisation';
 export const SITE_DESCRIPTION =
-  'Explore the portfolio of Billy Priambodo, a Full-Stack Engineer with over 6 years of experience in 3D mapping, CAD, GIS, and robotics. Discover innovative projects and insights into React, Three.js, and spatial analytics.';
+  'Tech lead with 8 years in engineering. I build exchange trading engines (CLOB, RFQ) and tokenisation platforms on Canton and EVM.';

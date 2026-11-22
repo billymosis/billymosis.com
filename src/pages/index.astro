@@ -2,6 +2,7 @@
 import Experiences from '../components/Experiences.astro';
 import Education from '../components/Education.astro';
 import Projects from '../components/Projects.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 ---
 
@@ -10,7 +11,8 @@ import Projects from '../components/Projects.astro';
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billy Priambodo - Full-Stack Engineer</title>
+    <title>{SITE_TITLE}</title>
+    <meta name="description" content={SITE_DESCRIPTION} />
   </head>
   <body class="relative bg-gray-50 dark:bg-gray-900 transition-colors duration-300 min-h-full">
     <div class="fixed w-full h-full top-0" id="pixi-container"></div>
@@ -38,25 +40,24 @@ import Projects from '../components/Projects.astro';
         <div class="grid gap-6">
           <h1 class="font-bold text-4xl m-0 text-gray-900 dark:text-white">Billy Priambodo</h1>
           <div class="grid gap-4">
-            <h2 class="font-semibold text-2xl m-0 text-gray-700 dark:text-gray-300">Full-Stack Engineer</h2>
+            <h2 class="font-semibold text-2xl m-0 text-gray-700 dark:text-gray-300">Tech Lead · Fintech &amp; Blockchain</h2>
             <div class="flex gap-2 flex-wrap">
               <!-- Skills badges with better styling -->
-              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">React</span>
-              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">Django</span>
-              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">Three.js</span>
+              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">Go</span>
               <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">TypeScript</span>
-              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">Python</span>
-              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">GIS</span>
-              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">CAD</span>
+              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">React</span>
+              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">Aeron</span>
+              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">Canton</span>
+              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">PostgreSQL</span>
+              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">Kubernetes</span>
+              <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100">Claude Code</span>
             </div>
           </div>
           <div class="prose dark:prose-invert max-w-none">
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Specializing in React, Three.js, and interactive solutions for 3D
-              mapping, CAD, GIS, and robotics.
+              Building trading engines and tokenisation platforms for regulated
+              digital-asset markets.
             </p>
-            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Currently preparing for JLPT N4, July 2025.</p>
-            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">頑張ります！！ (Ganbarimasu!)</p>
             <button id="debug" class="mt-4 px-4 py-2 rounded-md bg-amber-500 hover:bg-amber-600 text-white font-medium transition-colors shadow-md hover:shadow-lg">
               Marching Square!
             </button>
@@ -113,15 +114,16 @@ import Projects from '../components/Projects.astro';
         <div id="about" class="mt-24 scroll-mt-24 mb-64">
           <div class="prose dark:prose-invert max-w-none">
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-              With a passion for problem-solving and innovation, I specialize in
-              creating intuitive interfaces and scalable systems, blending over
-              <strong class="text-amber-700 dark:text-amber-400">6 years</strong> of experience in
-              <strong class="text-amber-700 dark:text-amber-400">engineering, spatial analytics, and 3D graphics</strong>
-              to deliver cutting-edge solutions. At <strong class="text-amber-700 dark:text-amber-400">Movel AI,</strong> I
-              tackle challenges at the intersection of robotics and GIS, crafting innovative
-              tools for mapping and navigation. My past work spans optimizing CAD/GIS
-              workflows, analyzing complex spatial data, and engineering solutions
-              for large-scale infrastructure projects. In my free time, I explore emerging
+              With a passion for problem-solving and leading teams, I build
+              reliable systems for demanding domains, blending over
+              <strong class="text-amber-700 dark:text-amber-400">8 years</strong> of experience in
+              <strong class="text-amber-700 dark:text-amber-400">engineering, trading systems, and spatial analytics</strong>
+              to deliver dependable products. At <strong class="text-amber-700 dark:text-amber-400">HydraX,</strong> I
+              lead the team behind the exchange trading engines and the tokenisation
+              platform, delivering for live clients such as SDAX and OCBC. Before that,
+              I built robotics mapping and navigation tools at Movel AI, and earlier I
+              optimized CAD/GIS workflows and engineered solutions for large-scale
+              infrastructure projects. In my free time, I explore emerging
               technologies and contribute to personal projects that merge creativity
               with innovation.
             </p>
@@ -154,8 +156,8 @@ import Projects from '../components/Projects.astro';
         
         <footer class="pt-16">
           <p class="text-center text-gray-600 dark:text-gray-400" id="footer-paragraph">
-            Built with Astro.js, PIXI.js and Tailwind CSS, and proudly deployed
-            on my self-hosted VPS.
+            Built with Astro, PIXI.js and Tailwind CSS. Deployed on Cloudflare
+            Workers.
           </p>
         </footer>
       </main>
